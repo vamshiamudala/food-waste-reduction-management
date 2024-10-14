@@ -1,0 +1,32 @@
+{% extends 'base.html' %} {% block title %}Volunteer Dashboard{% endblock %} {%
+block content %}
+
+<!-- Volunteer Dashboard Content -->
+<main class="dashboard-overview">
+  <h1>Volunteer Dashboard</h1>
+  <p>
+    Welcome to your volunteer dashboard. Here's a quick overview of your current
+    stats.
+  </p>
+
+  <div class="overview-cards">
+    <div class="card">
+      <h2>Total Pickups Done</h2>
+      <p>{{ total_pickups }}</p>
+    </div>
+    <div class="card">
+      <h2>Donation Requests Raised</h2>
+      <p>{{ total_donation_requests }}</p>
+    </div>
+    <div class="card">
+      <h2>Total Feedbacks Given</h2>
+      <p>{{ total_feedbacks }}</p>
+    </div>
+    <div class="card">
+      <h2>Alerts and Notifications</h2>
+      <p>{{ total_alerts }}</p>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

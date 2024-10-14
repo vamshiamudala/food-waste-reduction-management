@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}App{% endblock %}</title>
+    <link rel="stylesheet" href="/static/static/styles.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header>
+      <nav class="navbar">
+        <div class="navbar-brand">
+          <span>SavePlate</span>
+        </div>
+        <ul class="nav-links">
+          {% if session['role'] == 'manager' %}
+          <li>
+            <a
+              href="/home"
+              class="{% if request.path == '/home' %}active{% endif %}"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="/inventoryManagement"
+              class="{% if request.path == '/inventoryManagement' %}active{% endif %}"
+              >Inventory Management</a
+            >
+          </li>
+          <li>
+            <a
+              href="/foodposting"
+              class="{% if request.path == '/foodposting' %}active{% endif %}"
+              >Surplus Food Posting</a
+            >
+          </li>
+          <li>
+            <a
+              href="/donation"
+              class="{% if request.path == '/donation' %}active{% endif %}"
+              >Donation Requests</a
+            >
+          </li>
+          <li>
+            <a
+              href="/wasteLogging"
+              class="{% if request.path == '/wasteLogging' %}active{% endif %}"
+              >Waste Logging</a
+            >
+          </li>
+          <li>
+            <a
+              href="/messaging"
+              class="{% if request.path == '/messaging' %}active{% endif %}"
+              >Messaging</a
+            >
+          </li>
+
+          <div
+            class="hamburger-menu"
+            id="hamburgerDropdown"
+            onclick="toggleMenu()"
+          >
+            <img
+              src="/static/static/assets/fast-food-burger-svgrepo-com.svg"
+              alt="Menu Icon"
+              class="hamburger-icon"
+            />
+            <ul class="dropdown-menu" id="hamburgerDropdown">
+              <li><a href="/notifications">Alerts and Notifications</a></li>
+              <li><a href="/insights">Data Insights</a></li>
+            </ul>
+          </div>
+          <li>
+            <a
+              href="/profile"
+              class="{% if request.path == '/profile' %}active{% endif %}"
+              >Profile</a
+            >
+          </li>
+          {% elif session['role'] == 'volunteer' %}
+          <li>
+            <a
+              href="/volunteerhome"
+              class="{% if request.path == '/volunteerhome' %}active{% endif %}"
+              >Volunteer Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="/foodposts"
+              class="{% if request.path == '/foodposts' %}active{% endif %}"
+              >Food Postings</a
+            >
+          </li>
+          <li>
+            <a
+              href="/feedback"
+              class="{% if request.path == '/feedback' %}active{% endif %}"
+              >Feedback / Ratings</a
+            >
+          </li>
+          <li>
+            <a
+              href="/pickupschedule"
+              class="{% if request.path == '/pickupschedule' %}active{% endif %}"
+              >Pickup Schedule</a
+            >
+          </li>
+          <li>
+            <a
+              href="/notificationSettings"
+              class="{% if request.path == '/notificationSettings' %}active{% endif %}"
+              >Notification Settings</a
+            >
+          </li>
+          <li>
+            <a
+              href="/messaging"
+              class="{% if request.path == '/messaging' %}active{% endif %}"
+              >Messaging</a
+            >
+          </li>
+          <li>
+            <a
+              href="/profile"
+              class="{% if request.path == '/profile' %}active{% endif %}"
+              >Profile</a
+            >
+          </li>
+          {% endif %}
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Dynamic Content -->
+    <main>
+      {% block content %}
+      <!-- Individual pages will inject their content here -->
+      {% endblock %}
+    </main>
+
+    <script src="/static/static/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% block title %}Food Postings{% endblock %} {% block
+content %}
+
+<main>
+  <h1>Available Food Postings</h1>
+  {% for post in available_posts %}
+  <div class="post-card" id="post-{{ post.id }}">
+    <h3>{{ post.name }}</h3>
+    <p><strong>Quantity:</strong> {{ post.quantity }}</p>
+    <p><strong>Available Until:</strong> {{ post.expiry_date }}</p>
+    <button
+      class="schedule-btn"
+      onclick="schedulePickup('{{ post.id }}', document.getElementById('post-{{ post.id }}'))"
+    >
+      Schedule Pickup
+    </button>
+  </div>
+  {% endfor %} {% if not available_posts %}
+  <p>No available postings at the moment.</p>
+  {% endif %}
+</main>
+{% endblock %}

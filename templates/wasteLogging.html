@@ -1,0 +1,72 @@
+{% extends 'base.html' %} {% block title %}Waste Logging{% endblock %} {% block
+content %}
+<div class="flex-container">
+  <main class="waste-logging">
+    <h1>Waste Logging</h1>
+    <p>
+      Log discarded food items by recording quantities and reasons for disposal.
+    </p>
+
+    <form
+      id="waste-log-form"
+      class="waste_log_form"
+      method="POST"
+      action="/logWaste"
+    >
+      <label for="item_id">Select Item</label>
+      <select id="item_id" name="item_id" required>
+        <option value="">Select an item</option>
+        {% for item in inventory_items %}
+        <option value="{{ item.id }}">
+          {{ item.name }} (Quantity: {{ item.quantity }})
+        </option>
+        {% endfor %}
+      </select>
+
+      <label for="quantity">Quantity</label>
+      <input type="number" step="0.01" id="quantity" name="quantity" required />
+
+      <label for="reason">Reason for Disposal</label>
+      <textarea id="reason" name="reason" required></textarea>
+
+      <button type="submit" class="btn-log-waste">+ Log Waste</button>
+    </form>
+
+    <!-- Historical Waste Logs -->
+    <h2>Historical Waste Logs</h2>
+    <table class="waste-log-table">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Quantity</th>
+          <th>Reason</th>
+          <th>Date</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="waste-log-entries">
+        {% for log in wastage_logs %}
+        <tr>
+          <td>{{ log.item_name }}</td>
+          <td>{{ log.quantity }}</td>
+          <td>{{ log.reason }}</td>
+          <td>{{ log.date_logged }}</td>
+          <td>
+            <button class="btn-delete" onclick="deleteLog('{{ log.id }}')">
+              Delete
+            </button>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    {% if not wastage_logs %}
+    <div class="no-data">
+      <p>No waste logs available.</p>
+    </div>
+    {% endif %}
+  </main>
+</div>
+
+{% endblock %}

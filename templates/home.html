@@ -1,0 +1,50 @@
+{% extends 'base.html' %} {% block title %}Inventory Management{% endblock %} {%
+  block content %}
+    <!-- Dashboard Overview -->
+    <main class="dashboard-overview">
+      <h1>Dashboard Overview</h1>
+      <p>
+        Welcome to your inventory management dashboard. Here's a quick overview
+        of your current status.
+      </p>
+
+      <div class="overview-cards">
+        <div class="card">
+          <h2>Total Inventory Items</h2>
+          <p>1</p>
+        </div>
+        <div class="card">
+          <h2>Expiring Soon</h2>
+          <p>0</p>
+        </div>
+        <div class="card">
+          <h2>Recent Donations</h2>
+          <p>2</p>
+        </div>
+        <div class="card">
+          <h2>Total Waste</h2>
+          <p>931.00</p>
+        </div>
+      </div>
+
+      <div class="info-section">
+        <div class="expiring-items">
+          <h2>Expiring Items</h2>
+          <p>No items expiring soon</p>
+        </div>
+        <div class="recent-donations">
+          <h2>Recent Donations</h2>
+          <p>Canned Beans - Requested: August 31, 2025</p>
+          <p>Canned Beans - Requested: June 10, 2025</p>
+        </div>
+      </div>
+
+      <div class="alerts-notifications">
+        <h2>Alerts and Notifications</h2>
+        <p>No new notifications</p>
+      </div>
+    </main>
+
+    {% endblock %}
+  </body>
+</html>

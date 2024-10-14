@@ -1,0 +1,23 @@
+{% extends 'base.html' %} {% block title %}Pickup Schedule{% endblock %} {%
+block content %}
+
+<main>
+  {% for pickup in scheduled_pickups %}
+  <div class="pickup-card" id="pickup-{{ pickup.id }}">
+    <h3>{{ pickup.post.name }}</h3>
+    <p><strong>Quantity:</strong> {{ pickup.post.quantity }}</p>
+    <p><strong>Scheduled Time:</strong> {{ pickup.pickup_time }}</p>
+
+    {% if pickup.is_picked %}
+    <button class="btn-done" disabled>Done</button>
+    {% else %}
+    <form action="/markPicked/{{ pickup.id }}" method="POST">
+      <button type="submit" class="btn-pick">Picked</button>
+    </form>
+    {% endif %}
+  </div>
+  {% endfor %} {% if not scheduled_pickups %}
+  <p>No scheduled pickups at the moment.</p>
+  {% endif %}
+</main>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %} {% block title %}Surplus Food Posting{% endblock %} {%
+block content %}
+
+<div class="flex-container">
+  <main class="food-posting">
+    <h1>Surplus Food Posting</h1>
+    <p>
+      Post surplus or near-expiry food items for donation or browse available
+      postings.
+    </p>
+
+    <!-- Available Food Items Table -->
+    <table class="available-food-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Quantity</th>
+          <th>Expiry Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for post in available_posts %}
+        <tr>
+          <td>{{ post.name }}</td>
+          <td>{{ post.quantity }}</td>
+          <td>{{ post.expiry_date }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    {% if not available_posts %}
+    <div class="no-data">
+      <p>No data</p>
+    </div>
+    {% endif %}
+  </main>
+</div>
+
+{% endblock %}

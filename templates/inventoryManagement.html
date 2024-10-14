@@ -1,0 +1,79 @@
+{% extends 'base.html' %} {% block title %}Inventory Management{% endblock %} {%
+block content %}
+
+<div class="flex-container">
+  <h1>Inventory Management</h1>
+  <p>Manage your food inventory by adding, editing, or removing items.</p>
+
+  <!-- Button to open the Add New Item modal -->
+  <button id="add-item-btn" class="btn-add">+ Add New Item</button>
+
+  <!-- Inventory Table -->
+  <table class="inventory-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Expiry Date</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="inventory-items">
+      {% if inventory %} {% for item in inventory %}
+      <tr>
+        <td>{{ item.name }}</td>
+        <td>{{ item.quantity }}</td>
+        <td>{{ item.expiry_date }}</td>
+        <td>
+          <button class="btn-edit">Edit</button>
+          <button class="btn-delete" onclick="deleteItem('{{ item.id }}')">
+            Delete
+          </button>
+          <button class="btn-post" onclick="postItem('{{ item.id }}')">
+            Post
+          </button>
+        </td>
+      </tr>
+      {% endfor %} {% else %}
+      <tr>
+        <td colspan="4" class="no-data">
+          <img
+            src="/static/assets/no-data-icon.svg"
+            alt="No data"
+            class="no-data-icon"
+          />
+          <p>No data</p>
+        </td>
+      </tr>
+      {% endif %}
+    </tbody>
+  </table>
+</div>
+
+<!-- Add Item Modal -->
+<div id="addItemModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Add New Item</h2>
+    <form id="add-item-form" method="POST" action="/addItem">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+      <div class="form-group">
+        <label for="quantity">Quantity</label>
+        <input type="number" id="quantity" name="quantity" required />
+      </div>
+      <div class="form-group">
+        <label for="expiry_date">Expiry Date</label>
+        <input type="date" id="expiry_date" name="expiry_date" required />
+      </div>
+      <div class="modal-btns">
+        <button type="submit" class="btn-ok">OK</button>
+        <button type="button" class="btn-cancel">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

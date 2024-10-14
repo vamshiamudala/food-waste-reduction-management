@@ -1,0 +1,528 @@
+/* General Styling */
+body {
+  background-color: #121212;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2 {
+  color: #ffffff;
+}
+
+p {
+  color: #cccccc;
+}
+
+/* Navbar Styling (Dark Green Background) */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #004d40; /* Dark Green */
+  padding: 15px;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.nav-links {
+  display: flex;
+  list-style-type: none;
+  margin-bottom: 0;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
+  color: #b2dfdb; /* Light Green */
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* Active NavLink Styling */
+.nav-links .active {
+  background-color: #e8f5e9; /* Light Green Background */
+  padding: 5px 10px;
+  border-radius: 5px; /* Rounded corners */
+  border: 2px solid #81c784; /* Border that matches the green theme */
+  color: #004d40; /* Dark green text */
+  font-weight: bold;
+}
+
+.nav-links .active:hover {
+  background-color: #c8e6c9; /* Slightly darker green on hover */
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+  position: relative;
+  cursor: pointer;
+}
+
+.hamburger-icon {
+  width: 30px;
+  margin: -8px 11px 0px 11px;
+}
+
+.dropdown-menu {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background-color: #e8f5e9; /* Dark Green Background */
+  list-style-type: none;
+  padding: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+  width: max-content;
+}
+
+.dropdown-menu li {
+  margin: 5px 0;
+}
+
+.dropdown-menu a {
+  color: #004d40; /* Light Green Text */
+  text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+  background-color: #004d40; /* Light Green Background on Hover */
+  color: #e8f5e9; /* Dark Green Text on Hover */
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* Show dropdown when menu is clicked */
+.hamburger-menu.active .dropdown-menu {
+  display: block; /* Show dropdown */
+}
+
+.profile-section {
+  display: flex;
+  align-items: center;
+}
+
+.admin-text {
+  color: #ffcc80; /* Warm Yellow for user name */
+  font-size: 1rem;
+}
+
+/* Dashboard Overview */
+.dashboard-overview {
+  padding: 20px;
+}
+
+.overview-cards {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.card {
+  background-color: #004d40; /* Dark Green */
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  width: 20%;
+  color: #ffffff;
+}
+
+.info-section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.expiring-items,
+.recent-donations {
+  background-color: #004d40; /* Dark Green */
+  padding: 20px;
+  border-radius: 8px;
+  width: 45%;
+}
+
+.alerts-notifications {
+  background-color: #004d40; /* Dark Green */
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.post-card {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 10px;
+  display: inline-block;
+  width: 250px;
+  background-color: #e8f5e9; /* Light Green Background */
+  color: #004d40; /* Dark Green Text */
+}
+
+.post-card h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.post-card p {
+  margin: 5px 0;
+  color: #004d40;
+}
+
+.schedule-btn {
+  padding: 10px;
+  background-color: #00796b; /* Mid Green Button */
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.schedule-btn:hover {
+  background-color: #004d40; /* Darker Green on Hover */
+}
+
+.pickup-card {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 10px;
+  display: inline-block;
+  width: 250px;
+  background-color: #e8f5e9; /* Light Green Background */
+  color: #004d40; /* Dark Green Text */
+}
+
+.pickup-card h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.pickup-card p {
+  margin: 5px 0;
+  color: #004d40;
+}
+
+.btn-pick {
+  padding: 10px;
+  background-color: #00796b; /* Mid Green */
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn-pick:hover {
+  background-color: #004d40; /* Darker Green */
+}
+
+.btn-done {
+  padding: 10px;
+  background-color: #ccc;
+  color: #666;
+  border: none;
+  cursor: not-allowed;
+  border-radius: 5px;
+}
+/* Profile Page Styling */
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh; /* Center the content vertically */
+  background-color: #121212; /* Keep the dark background consistent */
+}
+
+.profile-box {
+  background-color: #e8f5e9; /* Green shade for the box */
+  padding: 30px;
+  border-radius: 10px;
+  color: white;
+  width: 400px;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.profile-box p {
+  margin: 10px 0;
+  font-size: 1.1rem;
+  color: #004d40;
+}
+
+.profile-box p strong {
+  color: #00796b; /* Light Green for the labels */
+}
+
+.btn-logout {
+  padding: 10px 20px;
+  background-color: #00796b; /* Matching mid-green shade for button */
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-top: 20px;
+  display: block;
+  width: 100%; /* Make the button full-width */
+}
+
+.btn-logout:hover {
+  background-color: #004d40; /* Darker green on hover */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+table th,
+table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #333;
+}
+
+table th {
+  background-color: #1a1a1a;
+  color: white;
+}
+
+table td {
+  background-color: #2a2a2a;
+  color: white;
+}
+
+table tr:hover {
+  background-color: #333;
+}
+
+/* No Data Styling */
+.no-data {
+  text-align: center;
+  padding: 50px 0;
+  color: #888;
+}
+
+.no-data-icon {
+  width: 50px;
+  margin-bottom: 10px;
+}
+
+/* Add Button */
+.btn-add,
+.btn-log-waste {
+  padding: 10px 20px;
+  background-color: #00796b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.btn-log-waste {
+  margin-top: 25px;
+}
+
+.btn-add,
+.btn-log-waste:hover {
+  background-color: #004d40;
+}
+
+/* Action Buttons */
+.btn-edit,
+.btn-delete,
+.btn-post {
+  padding: 8px 15px;
+  margin: 0 5px;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  background-color: transparent; /* Transparent background */
+  color: white;
+}
+
+/* Edit Button */
+.btn-edit {
+  border-color: #1e88e5; /* Blue border */
+  color: #1e88e5; /* Blue text */
+}
+
+.btn-edit:hover {
+  background-color: rgba(
+    30,
+    136,
+    229,
+    0.1
+  ); /* Light blue background on hover */
+}
+
+/* Delete Button */
+.btn-delete {
+  border-color: #e53935; /* Red border */
+  color: #e53935; /* Red text */
+}
+
+.btn-delete:hover {
+  background-color: rgba(229, 57, 53, 0.1); /* Light red background on hover */
+}
+
+/* Post Button */
+.btn-post {
+  border-color: #4caf50; /* Green border */
+  color: #4caf50; /* Green text */
+}
+
+.btn-post:hover {
+  background-color: rgba(
+    76,
+    175,
+    80,
+    0.1
+  ); /* Light green background on hover */
+}
+
+/* Modal Styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5); /* Background overlay */
+}
+
+.modal-content {
+  background-color: #e8f5e9; /* Light green background similar to profile box */
+  margin: 10% auto;
+  padding: 30px;
+  border-radius: 10px;
+  border: 1px solid #4caf50; /* Green border */
+  width: 400px;
+  text-align: left;
+  color: #004d40; /* Dark green text */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal input fields */
+.modal-content input {
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #4caf50; /* Green border */
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: #ffffff; /* White background */
+  color: #004d40; /* Dark green text */
+}
+
+.modal-content h2 {
+  color: #00796b;
+}
+
+/* Buttons in modal */
+.modal-content button {
+  padding: 10px 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+}
+.modal-btns {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.btn-ok {
+  background-color: #4caf50; /* Green for OK button */
+  color: white;
+}
+
+.btn-ok:hover {
+  background-color: #388e3c; /* Darker green on hover */
+}
+
+.btn-cancel {
+  background-color: #e53935; /* Red for Cancel button */
+  color: white;
+}
+
+.btn-cancel:hover {
+  background-color: #c62828; /* Darker red on hover */
+}
+
+/* Close button */
+.close {
+  color: #004d40; /* Dark green */
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #e53935; /* Red on hover */
+  cursor: pointer;
+}
+
+/* Flex layout for inputs */
+.modal-content .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.modal-content label {
+  margin-bottom: 5px;
+  font-size: 1.1rem;
+  color: #004d40; /* Dark green */
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  transform: translateX(40%);
+}
+
+.waste_log_form {
+  display: flex;
+  flex-direction: column;
+}
+
+.waste_log_form label {
+  font-size: 1.1rem;
+  color: white;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.waste_log_form select,
+input,
+textarea {
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #4caf50; /* Green border */
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: #ffffff; /* White background */
+  color: #004d40;
+}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %} {% block title %}Profile{% endblock %} {% block
+content %}
+
+<main class="profile-container">
+  <div class="profile-box">
+    <!-- Display user information inside a container -->
+    <p><strong>Name:</strong> {{ user.name }}</p>
+    <p><strong>Email:</strong> {{ user.email }}</p>
+    <p><strong>Role:</strong> {{ user.role }}</p>
+
+    <!-- Logout button -->
+    <form action="/logout" method="POST">
+      <button type="submit" class="btn-logout">Logout</button>
+    </form>
+  </div>
+</main>
+
+{% endblock %}
